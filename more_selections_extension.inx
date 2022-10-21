@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
   <name>More selections</name>
-  <id>org.andli.inkscape.more_selections_extension</id>
+  <id>org.andli.more_selections_extension</id>
+  <param name="select_option" type="optiongroup" _gui-text="Select option: ">
+    <option value="horizontal">Horizontal</option>
+    <option value="vertical">Vertical</option>
+  </param>
+  <param name="found_layer" type="string" _gui-text="Name of layer to put selected objects on?">Found</param>
   <effect>
+    <object-type>all</object-type>
     <effects-menu>
-      <submenu name="More selections..."/>
+      <submenu name="More selections"/>
     </effects-menu>
   </effect>
   <script>
