@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+  <name>More selections</name>
+  <id>org.andli.inkscape.more_selections_extension</id>
+  <effect>
+    <effects-menu>
+      <submenu name="More selections..."/>
+    </effects-menu>
+  </effect>
+  <script>
+    <command location="inx" interpreter="python">more_selections_extension.py</command>
+  </script>
+</inkscape-extension>
