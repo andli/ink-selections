@@ -21,6 +21,7 @@
 This extension gives you more selection options.
 """
 
+import sys
 import inkex
 from inkex.elements import *
 
@@ -39,14 +40,17 @@ class MoreSelectionsExtension(inkex.EffectExtension):
         """
         found_layer = self.options.found_layer
         selection_option = self.options.select_option
-        print(found_layer)
-        print(selection_option)
 
-        for elem in self.svg.selection.filter(inkex.PathElement):
-            elem.set("inkscape:modified_by_tutorial", "Yes")
+        for elem in self.svg:  # .filter(inkex.PathElement):
             elem.style["stroke-width"] = 6.0
             self.svg.selection.add(elem)
+            inkex.utils.debug(elem.get("inkscape:label"))
             # selection.add(elem)
+            # TODO: traverse down layers/groups to find paths
+
+
+def eprint(*args, **kwargs):
+    print(*args, file=sys.stderr, **kwargs)
 
 
 if __name__ == "__main__":
