@@ -23,16 +23,19 @@ This extension gives you more selection options.
 
 import inkex
 
+
 class MoreSelectionsExtension(inkex.EffectExtension):
     """EffectExtension to select lines pointing up"""
+
     def add_arguments(self, pars):
-        pass # We don't need arguments for this extension
+        pass  # We don't need arguments for this extension
 
     def effect(self):
         for elem in self.svg.selection:
-            elem.style['fill'] = 'red'
-            elem.style['fill-opacity'] = 1
-            elem.style['opacity'] = 1
+            elem.style["fill"] = "red"
+            elem.style["fill-opacity"] = 1
+            elem.style["opacity"] = 1
 
-if __name__ == '__main__':
-    MakeRedExtension().run()
+
+if __name__ == "__main__":
+    MoreSelectionsExtension().run()
